@@ -79,7 +79,7 @@ if(!isset($_SESSION["id"])){
 			</div>
 			<div class="form-group">
 				<label>Description</label>
-				<textarea cols="" rows="10" name="description" class="form-control"></textarea>
+				<textarea cols="" rows="10" name="description" class="form-control" id="body"></textarea>
 			</div>
 			<div class="form-group">
 				<label>Image</label>
@@ -104,4 +104,11 @@ if(!isset($_SESSION["id"])){
 		</form>
 	</div>
 </div>
+
+<script src="summernote/summernote.min.js"></script>
+<script>
+		$('#body').summernote({
+				height:300
+		});
+</script>
 <?php include('includes/footer.php'); ?>
