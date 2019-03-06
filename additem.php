@@ -79,7 +79,7 @@ if(!isset($_SESSION["id"])){
 			</div>
 			<div class="form-group">
 				<label>Description</label>
-				<textarea cols="" rows="10" name="description" class="form-control" id="body"></textarea>
+				<textarea cols="" rows="10" name="description" class="form-control" id="desc"></textarea>
 			</div>
 			<div class="form-group">
 				<label>Image</label>
@@ -105,9 +105,9 @@ if(!isset($_SESSION["id"])){
 	</div>
 </div>
 
-<script src="summernote/summernote.min.js"></script>
+<script src="./summernote/summernote.min.js"></script>
 <script>
-		$('#body').summernote({
+		$('#desc').summernote({
 				height:300
 		});
 </script>
