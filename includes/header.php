@@ -8,7 +8,6 @@
 	<title>Donation website</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="summernote/summernote.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/main.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/general.css">
 </head>
