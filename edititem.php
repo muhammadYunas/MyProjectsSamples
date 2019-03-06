@@ -1,5 +1,5 @@
 
-<?php 
+<?php
 require_once('config/config.php');
 require_once('config/db.php');
 	// Check for submit
@@ -46,7 +46,7 @@ if(isset($_POST['submit'])) {
         $fileActualExt = strtolower(end($fileExt));
 
         $allowed       = array('jpg','jpeg','png');
-        
+
         if (in_array($fileActualExt, $allowed)) {
             if ($fileError === 0) {
                 if ($fileSize < 1000000) {
@@ -68,7 +68,7 @@ if(isset($_POST['submit'])) {
 					} else {
 						echo 'ERROR: '. mysqli_error($c);
 					}
-                    
+
         			move_uploaded_file($fileTmpName, $fileDestination);
         			header('Location: '.ROOT_URL.'');
 
@@ -85,7 +85,7 @@ if(isset($_POST['submit'])) {
 
 	// get ID
 	$id = mysqli_real_escape_string($c, $_GET['id']);
-	
+
 	$query = 'SELECT * FROM items WHERE id = '. $id;
 
 	$result = mysqli_query($c, $query);
@@ -95,12 +95,12 @@ if(isset($_POST['submit'])) {
 	// var_dump($items);
 	// echo "</pre>";
 
-	// Free Result 
+	// Free Result
 	mysqli_free_result($result);
 
 	// Close Connection
 	mysqli_close($c);
-	
+
 
 ?>
 <?php include('includes/header.php'); ?>

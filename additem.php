@@ -1,15 +1,15 @@
 
-<?php 
+<?php
 require_once('config/config.php');
 require_once('config/db.php');
 
 	if(isset($_POST["submit"])) {
 
- 		$title 		   = mysqli_real_escape_string($c,$_POST['title']);
-		$description   = mysqli_real_escape_string($c,$_POST['description']);
-		$category_id   = mysqli_real_escape_string($c,$_POST['category_id']);
-		$author 	   = mysqli_real_escape_string($c,$_POST['author']);
-		$img  = $_FILES['img'];
+		 		$title 		   = mysqli_real_escape_string($c,$_POST['title']);
+				$description   = mysqli_real_escape_string($c,$_POST['description']);
+				$category_id   = mysqli_real_escape_string($c,$_POST['category_id']);
+				$author 	   = mysqli_real_escape_string($c,$_POST['author']);
+				$img  = $_FILES['img'];
 
         $fileName      = $_FILES["img"]["name"];
         $fileTmpName   = $_FILES["img"]["tmp_name"];
@@ -22,7 +22,7 @@ require_once('config/db.php');
         // echo print_r($img);
 
         $allowed       = array('jpg','jpeg','png');
-        
+
         if (in_array($fileActualExt, $allowed)) {
             if ($fileError === 0) {
                 if ($fileSize < 1000000) {
@@ -37,7 +37,7 @@ require_once('config/db.php');
 					} else {
 						echo 'ERROR: '. mysqli_error($c);
 					}
-                    
+
         			move_uploaded_file($fileTmpName, $fileDestination);
         			header('Location: '.ROOT_URL.'');
 
@@ -51,11 +51,28 @@ require_once('config/db.php');
             echo 'ERROR: '. mysqli_error($c);
          }
 }
-	
+
 
 ?>
 
 <?php include('includes/header.php'); ?>
+<?php
+if(!isset($_SESSION["id"])){
+
+    echo '<div class="alert text-center alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>SORRY !</strong> You are not logged in !
+          </div>';
+    die();
+} else {
+
+    if($_SESSION["id"] || $_SESSION["name"]){
+
+    }
+
+}
+?>
+
 <div class="container mg-bottom-20">
 	<div class="">
 		<h1>Add Item</h1>
