@@ -104,6 +104,16 @@ if(isset($_POST['submit'])) {
 
 ?>
 <?php include('includes/header.php'); ?>
+<?php if(!isset($_SESSION["id"])){
+	header('Location: index.php?user=Not_Authorize');
+} else {
+
+		if($_SESSION["id"] || $_SESSION["name"]){
+
+		}
+
+}
+?>
 <div class="container mg-bottom-20">
 	<div class="">
 		<h1>Add Item</h1>

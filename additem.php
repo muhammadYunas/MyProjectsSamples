@@ -58,11 +58,7 @@ require_once('config/db.php');
 <?php include('includes/header.php'); ?>
 <?php
 if(!isset($_SESSION["id"])){
-
-    echo '<div class="alert text-center alert-dismissible alert-danger">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>SORRY !</strong> You are not logged in !
-          </div>';
+    header('Location: index.php?user=Not_Authorize');
     die();
 } else {
 

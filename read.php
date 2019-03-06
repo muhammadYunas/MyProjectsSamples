@@ -19,7 +19,7 @@ require_once('config/db.php');
 
 		// get ID
 		$id = mysqli_real_escape_string($c, $_GET['id']);
-		
+
 		$query = 'SELECT * FROM items WHERE id = '. $id;
 
 		$result = mysqli_query($c, $query);
@@ -29,7 +29,7 @@ require_once('config/db.php');
 		// var_dump($items);
 		// echo "</pre>";
 
-		// Free Result 
+		// Free Result
 		mysqli_free_result($result);
 
 		// Close Connection
@@ -48,6 +48,16 @@ require_once('config/db.php');
 			<small>Created on <?= $item['created_at']; ?> by <?= $item['author']; ?></small>
 			<p><?= $item['description']; ?></p>
 			<hr>
+			<?php if(!isset($_SESSION["id"])){
+		    die();
+			} else {
+
+			    if($_SESSION["id"] || $_SESSION["name"]){
+
+			    }
+
+			}
+			?>
 			<form class="pull-right" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 				<input type="hidden" name="delete_id" value="<?= $item['id']; ?>">
 				<input type="submit" name="delete" value="Delete" class="btn btn-danger">
