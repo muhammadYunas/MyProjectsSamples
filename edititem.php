@@ -29,11 +29,11 @@ require_once('config/db.php');
 
 if(isset($_POST['submit'])) {
 
-		$update_id     = mysqli_real_escape_string($c,$_POST['update_id']);
- 		$title 		   = mysqli_real_escape_string($c,$_POST['title']);
-		$description   = mysqli_real_escape_string($c,$_POST['description']);
-		$category_id   = mysqli_real_escape_string($c,$_POST['category_id']);
-		$author 	   = mysqli_real_escape_string($c,$_POST['author']);
+		$update_id     = mysqli_real_escape_string($c, $_POST['update_id']);
+ 		$title 		   = mysqli_real_escape_string($c, $_POST['title']);
+		$description   = mysqli_real_escape_string($c, $_POST['description']);
+		$category_id   = mysqli_real_escape_string($c, $_POST['category_id']);
+		$author 	   = mysqli_real_escape_string($c, $_POST['author']);
 		// $img 		   = mysqli_real_escape_string($c, $_FILES['img']);
 
         $fileName      = $_FILES["img"]["name"];
@@ -104,14 +104,14 @@ if(isset($_POST['submit'])) {
 
 ?>
 <?php include('includes/header.php'); ?>
-<?php if(!isset($_SESSION["id"])){
+<?php
+if(!isset($_SESSION["id"])){
 	header('Location: index.php?user=Not_Authorize');
 } else {
 
 		if($_SESSION["id"] || $_SESSION["name"]){
-
+			echo true;
 		}
-
 }
 ?>
 <div class="container mg-bottom-20">

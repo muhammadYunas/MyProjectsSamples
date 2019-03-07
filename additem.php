@@ -89,16 +89,26 @@ if(!isset($_SESSION["id"])){
 				<label>Category</label>
 				<select name="category_id" class="form-control">
 					<option value="">--Select Category--</option>
-					<option value="1">Books</option>
-					<option value="2">Blood</option>
+					<?php
+					$query = "SELECT * FROM categories";
+					$result = mysqli_query($c, $query);
+
+					while ($items = mysqli_fetch_assoc($result)) {
+						echo "<option value=".$items['id'].">".$items['name']."</option>";
+					}
+					mysqli_free_result($result);
+					// Close Connection
+					mysqli_close($c);
+					?>
 				</select>
 			</div>
 			<div class="form-group">
-				<label>User</label>
-				<select name="author" class="form-control">
-					<option value="">--Select User--</option>
-					<option value="1">younas</option>
-				</select>
+				<!-- <label>User</label> -->
+				<?php
+				if (isset($_SESSION['id'])) {
+					echo "<input type='hidden' name='author' value=".$_SESSION['name'].">";
+				}
+				?>
 			</div>
 			<input type="submit" name="submit" value="Submit" class="btn btn-primary">
 		</form>
