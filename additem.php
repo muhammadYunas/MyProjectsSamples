@@ -103,12 +103,7 @@ if(!isset($_SESSION["id"])){
 				</select>
 			</div>
 			<div class="form-group">
-				<!-- <label>User</label> -->
-				<?php
-				if (isset($_SESSION['id'])) {
-					echo "<input type='hidden' name='author' value=".$_SESSION['name'].">";
-				}
-				?>
+				<input type='hidden' name='author' value="<?= $_SESSION['id']; ?>">
 			</div>
 			<input type="submit" name="submit" value="Submit" class="btn btn-primary">
 		</form>

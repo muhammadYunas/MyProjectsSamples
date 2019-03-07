@@ -110,7 +110,7 @@ if(!isset($_SESSION["id"])){
 } else {
 
 		if($_SESSION["id"] || $_SESSION["name"]){
-			echo true;
+
 		}
 }
 ?>
@@ -138,10 +138,7 @@ if(!isset($_SESSION["id"])){
 				</select>
 			</div>
 			<div class="form-group">
-				<label>User</label>
-				<select name="author" class="form-control">
-					<option value="<?php echo $item['author']; ?>"><?= $item['author']; ?></option>
-				</select>
+				<input type='hidden' name='author' value="<?= $_SESSION['id']; ?>">
 			</div>
 			<input type="hidden" name="update_id" value="<?= $item['id']; ?>">
 			<input type="submit" name="submit" value="Submit" class="btn btn-primary">
