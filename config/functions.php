@@ -2,6 +2,16 @@
   // require('config/pdo.php');
   // require('config/db.php');
 
+  // function category_name($category_id){
+  //
+  //   $query = "SELECT * FROM categories WHERE id =". $category_id;
+  //   $result = mysqli_query($c, $query);
+  //
+  //   while ($item = mysqli_fetch_assoc($result)) {
+  //     echo "<option value=".$item['category_id'].">".$item['category_id']."</option>";
+  //   }
+  // }
+
 // function get_item_user($id){
 // 	$sql  = "SELECT * FROM user WHERE id = ?";
 // 	$stmt = $c->prepare($sql);
