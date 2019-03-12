@@ -5,11 +5,11 @@ require_once('config/db.php');
 
 	if(isset($_POST["submit"])) {
 
-		 		$title 		   	 = mysqli_real_escape_string($c,$_POST['title']);
-				$description   = mysqli_real_escape_string($c,$_POST['description']);
-				$category_id   = mysqli_real_escape_string($c,$_POST['category_id']);
-				$author 	   	 = mysqli_real_escape_string($c,$_POST['author']);
-				$img  				 = $_FILES['img'];
+ 		$title 		   	 = mysqli_real_escape_string($c,$_POST['title']);
+		$description   = mysqli_real_escape_string($c,$_POST['description']);
+		$category_id   = mysqli_real_escape_string($c,$_POST['category_id']);
+		$author 	   	 = mysqli_real_escape_string($c,$_POST['author']);
+		$img  				 = $_FILES['img'];
 
         $fileName      = $_FILES["img"]["name"];
         $fileTmpName   = $_FILES["img"]["tmp_name"];
@@ -56,6 +56,7 @@ require_once('config/db.php');
 ?>
 
 <?php include('includes/header.php'); ?>
+
 <?php
 if(!isset($_SESSION["id"])){
     header('Location: index.php?user=Not_Authorize');
