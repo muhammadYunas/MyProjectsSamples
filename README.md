@@ -13,13 +13,6 @@
 	</code>
 </pre>
 
-<h3>Read Category</h3>
-<pre>
-	<code>
-		donationapp/apis/api/category/read.php
-	</code>
-</pre>
-
 <h3>Read Single Category</h3>
 <pre>
 	<code>
